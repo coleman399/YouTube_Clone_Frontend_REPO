@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+![Screenshot (59)](https://user-images.githubusercontent.com/91759734/143938433-486b4182-87a0-4361-a0bb-e02af4f85da5.png)
+Learning objective: Use React.js, Axios, and CSS to build a responsive YouTube clone app to search for YouTube videos, channels, playlists, and live events via wrapper around Google YouTube API.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Technologies: React.js, React Forms, Django REST API, CSS, Axios, Postman, YouTube API, Create React
 
-## Available Scripts
+App
 
-In the project directory, you can run:
+API Documentation:
 
-### `npm start`
+• https://developers.google.com/youtube/v3/getting-started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+• Google Developer Console: https://console.developers.google.com/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+• Embedded Player: https://developers.google.com/youtube/player_parameters
 
-### `npm test`
+• REST Request Documentation: https://developers.google.com/youtube/v3/docs/search/list#httprequest
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+• This is for searching for a video based on a query: o https://www.googleapis.com/youtube/v3/search?q={SEARCH QUERY HERE}&key={API KEY HERE}
 
-### `npm run build`
+• This is for searching for related videos: o https://www.googleapis.com/youtube/v3/search?relatedToVideoId={VIDEO ID HERE}&type=video&key={API KEY HERE}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Django REST API backend is for storing the comments for the videos. It is required to complete the backend API before moving on to any of the user stories. Once completed, send the repo with the completed code to your group of instructors to be checked off.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Total project points: /92.5
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Total weighted points to final grade: /80
 
-### `npm run eject`
+Features:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+(5 points): As a developer, I want to make at least 25 good, consistent commits.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+(10 points) As a developer, I want to set up my MySQL database and Django REST web API with appropriate urls, views, and models.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+(5 points): As a web designer, I want to create a wireframe for my application
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+(5 points): As a developer, I want to create a React app using Create React App.
 
-## Learn More
+(5 points) As a developer, I want to use React.js best practices, which consists of creating class components and function components when appropriate, and properly passing state around as props.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+(7.5 points) As a developer, I want to use CSS appropriately to make an aesthetically pleasing application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+(5 points) As a user, I want to be able to play a YouTube video in the embedded video player.
 
-### Code Splitting
+(10 points) As a developer, I want to use Axios to make GET requests to the YouTube API to pull in video id data.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+(5 points) As a user, I want to be able to search for YouTube videos.
 
-### Analyzing the Bundle Size
+(5 points) As a user, I want to see a collection of videos related to my search.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+(5 points) As a user, I want to see the title and description of the currently playing video.
 
-### Making a Progressive Web App
+(5 points) As a user, I want to be able to select a video to be played from a list of related videos to my search.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+(7.5 points) As a user, I want to add a comment to a video in the comment section.
 
-### Advanced Configuration
+(5 points) As a user, I want to like or dislike a comment in the comment section.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+(7.5 points) As a user, I want to reply to another comment in the comment section.
