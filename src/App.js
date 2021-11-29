@@ -24,7 +24,7 @@ class App extends Component {
         comments: [{
           commentId: 0,
           parentId: 0,
-          body: '',
+          body: 'Hello World',
           likes: 0,
           dislikes: 0,
         }]

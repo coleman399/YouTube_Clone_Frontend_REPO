@@ -21,6 +21,7 @@ const Comment = (props) => {
                                 <div className="d-grid gap-2">
                                     <Button variant="success" onClick={() => {setLikes(likes + 1); setToggle1('disabled');}} disabled={toggle1}>Like {likes}</Button>
                                     <Button variant="danger" onClick={() => {setDislikes(dislikes + 1); setToggle2('disabled');}} disabled={toggle2}>Dislike {dislikes}</Button>
+                                    <Button variant="primary">Reply</Button>
                                 </div>
                             </div>
                         </div>  
