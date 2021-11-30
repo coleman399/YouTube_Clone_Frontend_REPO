@@ -11,3 +11,13 @@
     width: 100%;
     height: 100%;
 }
+
+.btn.btn-light.btn-sm.btn-outline-success:disabled{
+    background-color: #198754;
+    color: white;
+}
+
+.btn.btn-light.btn-sm.btn-outline-danger:disabled{
+    background-color: #dc3545;
+    color: white;
+}

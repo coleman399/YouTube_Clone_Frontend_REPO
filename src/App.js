@@ -45,7 +45,7 @@ class App extends Component {
 
   postBackendData = async (data) => {
     let backendData = {
-      videoId: data.id,
+      videoId: data.videoId,
       likes: data.likes,
       dislikes: data.dislikes,
       comments: data.comments,
@@ -117,7 +117,7 @@ class App extends Component {
             </div>
           </div>
           <div className="col-3">
-            <VideosPanel {...this.state}/>
+            <VideosPanel {...this.state} searchVideo={this.searchVideo}/>
           </div>
           <div className="col-1"/>
         </div>
