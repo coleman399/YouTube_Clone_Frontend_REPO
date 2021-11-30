@@ -11,7 +11,7 @@ const VideoPlayer = (props) => {
     const [dislikes, setDislikes] = useState(props.backendData.dislikes);
     const [toggle1, setToggle1] = useState('')
     const [toggle2, setToggle2] = useState('')
-    
+
     let url = "https://www.youtube.com/embed/" + props.video.videoId;
     let data = {
         videoId: props.video.videoId,
@@ -22,8 +22,6 @@ const VideoPlayer = (props) => {
 
     const handleOnClick = (e) => {
         e.preventDefault();
-        //textbox {form submit}
-        //
         props.postBackendData(data)
     }
 

@@ -62,9 +62,9 @@ class App extends Component {
 
   searchVideo = async (query) => {
     try{
-      let getQuery = await axios.get('https://www.googleapis.com/youtube/v3/search?q='+query+'&key=AIzaSyDJ2cLaQKQWQAHrs8vwmyWPWydjgMFztWY&maxResults=5&part=snippet');
-      let getVideo = await axios.get('https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=' + getQuery.data.items[0].id.videoId + '&key=AIzaSyDJ2cLaQKQWQAHrs8vwmyWPWydjgMFztWY');
-      let getRelated = await axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId='+ getQuery.data.items[0].id.videoId  + '&type=video&key=AIzaSyDJ2cLaQKQWQAHrs8vwmyWPWydjgMFztWY');
+      let getQuery = await axios.get('https://www.googleapis.com/youtube/v3/search?q='+query+'&key=AIzaSyAOHe2NntfufAEBUCCno1zVI2VqqH682K4&maxResults=5&part=snippet');
+      let getVideo = await axios.get('https://youtube.googleapis.com/youtube/v3/videos?part=snippet&id=' + getQuery.data.items[0].id.videoId + '&key=AIzaSyAOHe2NntfufAEBUCCno1zVI2VqqH682K4');
+      let getRelated = await axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId='+ getQuery.data.items[0].id.videoId  + '&type=video&key=AIzaSyAOHe2NntfufAEBUCCno1zVI2VqqH682K4');
       this.setState({  
         searchVideos: getQuery.data.items,
         video: {
@@ -81,7 +81,7 @@ class App extends Component {
 
   getRelatedVideos = async (id) => {
     try {
-      let response = await axios.get('https://www.googleapis.com/youtube/v3/search?relatedToVideoId='+ id + '&type=video&key=AIzaSyDJ2cLaQKQWQAHrs8vwmyWPWydjgMFztWY');
+      let response = await axios.get('https://www.googleapis.com/youtube/v3/search?relatedToVideoId='+ id + '&type=video&key=AIzaSyAOHe2NntfufAEBUCCno1zVI2VqqH682K4');
       this.setState({
         relatedVideos: response.data
       })

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import VideoCard from './VideoCard'
 import './VideosPanel.css';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 const tabContent = (props, toggle) => {
     let videos = "";
@@ -9,81 +10,110 @@ const tabContent = (props, toggle) => {
         if (props.searchVideos.length === 0){
             videos = <></>
         } else {
-            videos = 
-                <>
-                    <div> 
-                        <VideoCard 
-                            title={props.searchVideos[1].snippet.title} 
-                            thumbnail={props.searchVideos[1].snippet.thumbnails.high.url}
-                            videoId={props.searchVideos[1].id.videoId}
-                            searchVideo={props.searchVideo}
-                        />
-                    </div>
-                    <div>
-                        <VideoCard 
-                            title={props.searchVideos[2].snippet.title} 
-                            thumbnail={props.searchVideos[2].snippet.thumbnails.high.url}
-                            videoId={props.searchVideos[2].id.videoId}
-                            searchVideo={props.searchVideo}
-                        />
-                    </div>
-                    <div>
-                        <VideoCard 
-                            title={props.searchVideos[3].snippet.title} 
-                            thumbnail={props.searchVideos[3].snippet.thumbnails.high.url}
-                            videoId={props.searchVideos[3].id.videoId}
-                            searchVideo={props.searchVideo}
-                        />
-                    </div>
-                    <div>
-                        <VideoCard 
-                            title={props.searchVideos[4].snippet.title} 
-                            thumbnail={props.searchVideos[4].snippet.thumbnails.high.url}
-                            videoId={props.searchVideos[4].id.videoId}
-                            searchVideo={props.searchVideo}
-                        />
-                    </div>
-                </>
+            try{
+                videos = 
+                    <>
+                        <ErrorBoundary>
+                            <ErrorBoundary>
+                                <div> 
+                                    <VideoCard 
+                                        title={props.searchVideos[1].snippet.title} 
+                                        thumbnail={props.searchVideos[1].snippet.thumbnails.high.url}
+                                        videoId={props.searchVideos[1].id.videoId}
+                                        searchVideo={props.searchVideo}
+                                    />
+                                </div>
+                            </ErrorBoundary>
+                            <ErrorBoundary>
+                                <div>
+                                    <VideoCard 
+                                        title={props.searchVideos[2].snippet.title} 
+                                        thumbnail={props.searchVideos[2].snippet.thumbnails.high.url}
+                                        videoId={props.searchVideos[2].id.videoId}
+                                        searchVideo={props.searchVideo}
+                                        />
+                                </div>
+                            </ErrorBoundary>
+                            <ErrorBoundary>
+                                <div>
+                                    <VideoCard 
+                                        title={props.searchVideos[3].snippet.title} 
+                                        thumbnail={props.searchVideos[3].snippet.thumbnails.high.url}
+                                        videoId={props.searchVideos[3].id.videoId}
+                                        searchVideo={props.searchVideo}
+                                    />
+                                </div>
+                            </ErrorBoundary>
+                            <ErrorBoundary>              
+                                <div>
+                                    <VideoCard 
+                                        title={props.searchVideos[4].snippet.title} 
+                                        thumbnail={props.searchVideos[4].snippet.thumbnails.high.url}
+                                        videoId={props.searchVideos[4].id.videoId}
+                                        searchVideo={props.searchVideo}
+                                    />
+                                </div>
+                            </ErrorBoundary>
+                        </ErrorBoundary>
+                    </>
+            } catch(e) {
+                console.log(e);
+            } 
         }     
     } else {
         if (props.relatedVideos.length === 0){
             videos = <></>
         } else {
-            videos = 
-                <>
-                    <div> 
-                        <VideoCard 
-                            title={props.relatedVideos[1].snippet.title} 
-                            thumbnail={props.relatedVideos[1].snippet.thumbnails.high.url}
-                            videoId={props.relatedVideos[1].id.videoId}
-                            searchVideo={props.searchVideo}
-                        />
-                    </div>
-                    <div>
-                        <VideoCard 
-                            title={props.relatedVideos[2].snippet.title} 
-                            thumbnail={props.relatedVideos[2].snippet.thumbnails.high.url}
-                            videoId={props.relatedVideos[1].id.videoId}
-                            searchVideo={props.searchVideo}
-                        />
-                    </div>
-                    <div>
-                        <VideoCard 
-                            title={props.relatedVideos[3].snippet.title} 
-                            thumbnail={props.relatedVideos[3].snippet.thumbnails.high.url}
-                            videoId={props.relatedVideos[1].id.videoId}
-                            searchVideo={props.searchVideo}
-                        />
-                    </div>
-                    <div>
-                        <VideoCard 
-                            title={props.relatedVideos[4].snippet.title} 
-                            thumbnail={props.relatedVideos[4].snippet.thumbnails.high.url}
-                            videoId={props.relatedVideos[1].id.videoId}
-                            searchVideo={props.searchVideo}
-                        />
-                    </div>
-                </>
+            try {
+                videos = 
+                    <>
+                        <ErrorBoundary>
+                            <ErrorBoundary>
+                                <div> 
+                                    <VideoCard 
+                                        title={props.relatedVideos[1].snippet.title} 
+                                        thumbnail={props.relatedVideos[1].snippet.thumbnails.high.url}
+                                        videoId={props.relatedVideos[1].id.videoId}
+                                        searchVideo={props.searchVideo}
+                                    />
+                                </div>
+                            </ErrorBoundary>
+                            <ErrorBoundary>
+                                <div>
+                                    <VideoCard 
+                                        title={props.relatedVideos[2].snippet.title} 
+                                        thumbnail={props.relatedVideos[2].snippet.thumbnails.high.url}
+                                        videoId={props.relatedVideos[1].id.videoId}
+                                        searchVideo={props.searchVideo}
+                                    />
+                                </div>
+                            </ErrorBoundary>
+                            <ErrorBoundary>
+                            
+                                <div>
+                                    <VideoCard 
+                                        title={props.relatedVideos[3].snippet.title} 
+                                        thumbnail={props.relatedVideos[3].snippet.thumbnails.high.url}
+                                        videoId={props.relatedVideos[1].id.videoId}
+                                        searchVideo={props.searchVideo}
+                                    />
+                                </div>
+                            </ErrorBoundary>
+                            <ErrorBoundary>
+                                <div>
+                                    <VideoCard 
+                                        title={props.relatedVideos[4].snippet.title} 
+                                        thumbnail={props.relatedVideos[4].snippet.thumbnails.high.url}
+                                        videoId={props.relatedVideos[1].id.videoId}
+                                        searchVideo={props.searchVideo}
+                                    />
+                                </div>
+                            </ErrorBoundary>
+                        </ErrorBoundary>
+                    </>
+            } catch(e) {
+                console.log(e);
+            } 
         } 
     }
     return videos;
