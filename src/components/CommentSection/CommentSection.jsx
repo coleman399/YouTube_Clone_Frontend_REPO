@@ -3,8 +3,7 @@ import Comment from './Comment';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 
 const CommentSection = props => {
-    const [comments, setComments] = useState(props.backendData.comments)
-    const rootComments = comments.filter(comment => comment.parentId === 0);
+    const rootComments = props.backendData.comments.filter(comment => comment.parentId === 0);
     console.log("rootComments", rootComments);
 
     useEffect(() => {
@@ -16,7 +15,7 @@ const CommentSection = props => {
         <div>
             <ErrorBoundary>
                 {rootComments.map(rootComment =>
-                    <Comment parentId={rootComment.parentId} commentId={rootComment.commentId} commentBody={rootComment.body} commentLikes={rootComment.likes} commentDislikes={rootComment.dislikes}/>
+                    <Comment {...props} commentBody={rootComment.body} commentLikes={rootComment.likes} commentDislikes={rootComment.dislikes}/>
                     )}
             </ErrorBoundary>
         </div>

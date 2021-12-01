@@ -48,10 +48,27 @@ class App extends Component {
       videoId: data.videoId,
       likes: data.likes,
       dislikes: data.dislikes,
+      comments: data.comments
+    }
+    try {
+      await axios.put('http://127.0.01:8000/youtube_app/', backendData, data.videoId);
+      this.setState({
+        backendData: [...this.state.backendData.comments, data.comments]
+      }, () => console.log(this.state.video))
+    }catch(e) {
+      console.log(e)
+    }
+  }
+
+  updateBackendData = async (id, data) => {
+    let backendData = {
+      videoId: id,
+      likes: data.likes,
+      dislikes: data.dislikes,
       comments: data.comments,
     }
     try {
-      await axios.post('http://127.0.01:8000/youtube_app/', backendData);
+      await axios.put('http://127.0.01:8000/youtube_app/', backendData);
       this.setState({
         backendData: backendData
       }, () => console.log(this.state.video))

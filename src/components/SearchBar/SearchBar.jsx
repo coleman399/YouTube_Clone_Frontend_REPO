@@ -22,20 +22,19 @@ const SearchBar = (props) => {
         <nav className="navbar navbar-expend-md navbar-dark bg-primary">
             <div className="container-fluid">
                 <div className="col-4">
-                    <span className="navbar-brand h1">Home</span>
+                    <span className="navbar-brand h1">GoGo.</span>
                 </div>
                 <div className="col-4">
                     <div className="p-1">
-                    <Form id="searchbar" onSubmit={e => handleSubmit(e)}>
-                        <InputGroup id="searchbar">
-                            <FormControl onChange={handleChange} placeholder="Search..." aria-label="Search..." aria-describedby="searchbar"/>
-                            <Button variant="light outline-success" id="searchbar" type="submit">Go</Button>
-                        </InputGroup>
-                    </Form>
+                        <Form id="searchbar" onSubmit={e => handleSubmit(e)}>
+                            <InputGroup id="searchbar">
+                                <FormControl onChange={handleChange} placeholder="Search..." aria-label="Search..." aria-describedby="searchbar"/>
+                                <Button variant="light outline-success" id="searchbar" type="submit">Go</Button>
+                            </InputGroup>
+                        </Form>
                     </div>
                 </div>
                 <div className="col-4">
-                    <div className="text-end"><span className="navbar-brand h1 text-end">Account</span></div>
                 </div>
             </div>
         </nav>
