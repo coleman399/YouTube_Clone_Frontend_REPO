@@ -1,4 +1,5 @@
-![Screenshot (61)](https://user-images.githubusercontent.com/91759734/143957775-9bbb1342-676c-4c9d-978c-0f041f605254.png)
+![Screenshot (69)](https://user-images.githubusercontent.com/91759734/144274059-b049ea10-9e12-4e7e-8195-0d24374dfc6a.png)
+
 Learning objective: Use React.js, Axios, and CSS to build a responsive YouTube clone app to search for YouTube videos, channels, playlists, and live events via wrapper around Google YouTube API.
 
 Technologies: React.js, React Forms, Django REST API, CSS, Axios, Postman, YouTube API, Create React
